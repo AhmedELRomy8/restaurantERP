@@ -42,7 +42,7 @@ jobs:
         buildozer android debug
       
     - name: Upload APK artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: success()
       with:
         name: restaurant-erp-apk
@@ -51,7 +51,7 @@ jobs:
     
     - name: Create Release
       if: success()
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         files: bin/restaurant_erp-*.apk
         tag_name: v1.0.0-apk
